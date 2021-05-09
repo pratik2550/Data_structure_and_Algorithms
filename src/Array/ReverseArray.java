@@ -3,7 +3,7 @@ package Array;
     Program to reverse an array using:-
     1.Using for loop (In this, we only print the array in reverse order not changing the array.)
     2.Using recursion (In this, we first reverse the array and then print the array)
-    2.Using Iteration (In this, we first reverse the array and then print the array)
+    3.Using Iteration (In this, we first reverse the array and then print the array)
  */
 
 import java.io.*;
