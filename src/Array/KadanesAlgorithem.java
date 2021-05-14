@@ -18,12 +18,12 @@ public class KadanesAlgorithem {
             }
 
             maxSubArray1(arr);
-            maxSubArray3(arr);
+            maxSubArray2(arr);
 
         }
     }
 
-    private static void maxSubArray3(int[] arr) {
+    private static void maxSubArray2(int[] arr) {
         int max = arr[0], curr_max = arr[0];
         for (int i=0; i<arr.length; i++) {
             curr_max = Math.max(arr[i], curr_max+arr[i]);
