@@ -2,13 +2,16 @@ package Array;
 /*
     Program to Find the Duplicate Number in an n+1 array:-
     Method 1- Place the array element to element value-1 index and check every element present in appropriate place,
-    if not then it is a repeating number.
+              if not then it is a repeating number.
     Method 2- Traverse the array from start to end, take its absolute value and if the abs(array[i])‘th element is positive,
-    the element has not encountered before, else if negative the element has been encountered.
+              the element has not encountered before, else if negative the element has been encountered.
     Method 3- Two pointer approach ( Floyd’s cycle finding algorithm to detect loop).
+    Method 4- Traverse the array from start to end, increase the array[array[i]%n] by n in every occurrence, then again traverse
+              array and divide by n, if it is greater then one then it is duplicate number (work in multiple occurrence of a number).
  */
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class DuplicateInArray {
     public static void main(String[] args) throws IOException {
@@ -25,6 +28,7 @@ public class DuplicateInArray {
             findDuplicate1(arr);
             findDuplicate2(arr);
             findDuplicate3(arr);
+            findDuplicate4(arr);
         }
     }
 
@@ -69,5 +73,26 @@ public class DuplicateInArray {
             slow = arr[slow];
         }
         System.out.println(fast);
+    }
+
+    private static void findDuplicate4(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            int index = arr[i] % n;
+            arr[index] += n;
+        }
+        int flag = 0;
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i]+" "+(arr[i] / n)+" "+((arr[i] / n) > 1));
+            if ((arr[i] / n) > 1) {
+                ans.add(i);
+                flag = 1;
+            }
+        }
+        if (flag == 0) ans.add(-1);
+        for (int i: ans) {
+            System.out.print(i);
+        }
     }
 }
