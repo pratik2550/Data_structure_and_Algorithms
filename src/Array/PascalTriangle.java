@@ -19,6 +19,8 @@ public class PascalTriangle {
             printTriangle(res);
             List<Long> getRow = getRow(n);
             printRow(getRow);
+            List<Long> getRow2 = getRow2(n);
+            printRow(getRow2);
         }
     }
 
@@ -61,6 +63,29 @@ public class PascalTriangle {
             res.add(temp);
         }
         return res;
+    }
+
+    //generate nth row of Pascal triangle(if n is very large)
+    private static List<Long> getRow2(int n) {
+            // code here
+            if(n==1)
+            {
+                List<Long> v = new ArrayList<>();
+                v.add(1l);
+                return v;
+            }
+            final long MOD = 1000_000_007;
+
+            List<Long> v = new ArrayList<>();
+            List<Long> tans = getRow2(n-1);
+            v.add(1l);
+            long c = 1;
+            for (int i = 1; i < n-1; i++) {
+                v.add((tans.get(i)+tans.get(i-1))%MOD);
+                //c = ((c % MOD * (n - i)) % MOD * mod.get(i)) % MOD;
+            }
+            v.add(1l);
+            return v;
     }
 
     //print nth row of Pascal Triangle
