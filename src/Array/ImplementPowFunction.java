@@ -17,14 +17,14 @@ public class ImplementPowFunction {
 
     //throws stack overflow error for very large number.
     private static double calculatePow(double x, int n) {
-        if (n==1) {
+        if (n == 1) {
             return x;
-        } else if (n>1) {
+        } else if (n > 1) {
             return x * calculatePow(x, --n);
-        } else if (n==-1) {
-            return 1/x;
-        } else if (n<-1) {
-            return (1/x * calculatePow(x, ++n));
+        } else if (n == -1) {
+            return 1 / x;
+        } else if (n < -1) {
+            return (1 / x * calculatePow(x, ++n));
         } else {
             return 0;
         }
@@ -33,13 +33,17 @@ public class ImplementPowFunction {
     //handle all case(best solution)
     public static double myPow(double x, int n) {
         double res = myPowHelper(x, Math.abs(n));
-        if (n < 0) { res = 1/res;}
+        if (n < 0) {
+            res = 1 / res;
+        }
         return res;
     }
 
     public static double myPowHelper(double x, int n) {
-        if (n == 0) { return 1; }
-        double halfRes = myPowHelper(x, n/2);
+        if (n == 0) {
+            return 1;
+        }
+        double halfRes = myPowHelper(x, n / 2);
         if (n % 2 == 0) {
             return halfRes * halfRes;
         } else {
