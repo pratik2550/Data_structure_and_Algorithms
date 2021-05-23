@@ -46,7 +46,7 @@ public class MergeTwoSortedArray {
 
     //Method 1
     //Start comparing from first element of arrays
-    //if element of array2 is less with element of array1 then swap element and sort array2
+    //if element of array2 is less then element of array1 then swap element and sort array2
     //increase pointer1 of array 1
     private static void merge1(int[] arr1, int[] arr2) {
         int p1 = 0, p2 = 0, temp;
