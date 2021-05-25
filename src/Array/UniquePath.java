@@ -1,4 +1,7 @@
 package Array;
+/*
+    Program to find unique path from source to destination in a given matrix using only right and down direction.
+ */
 
 import java.io.*;
 
