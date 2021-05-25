@@ -1,4 +1,8 @@
 package Array;
+/*
+    Program to find reverse pair in an array.
+    A reverse pair is a pair (i, j) where 0 <= i < j < arr.length and arr[i] > 2 * arr[j].
+ */
 
 import java.io.*;
 import java.util.ArrayList;
