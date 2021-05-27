@@ -1,4 +1,7 @@
 package Hashing;
+/*
+    Program to find sum of four element in an array equals to given target.
+ */
 
 import java.io.*;
 import java.util.*;
