@@ -41,12 +41,8 @@ public class PairWithGivenSum {
             if(mp.containsKey(rr))
             {
                 count += mp.get(rr);
-                mp.put(arr[i],mp.get(arr[i])==null?1:mp.get(arr[i])+1);
             }
-            else
-            {
-                mp.put(arr[i],mp.get(arr[i])==null?1:mp.get(arr[i])+1);
-            }
+            mp.put(arr[i],mp.get(arr[i])==null?1:mp.get(arr[i])+1);
         }
         return count;
     }
