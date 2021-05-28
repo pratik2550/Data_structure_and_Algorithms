@@ -1,4 +1,7 @@
 package Hashing;
+/*
+    Program to find longest consecutive sequence in an unsorted array.
+ */
 
 import java.io.*;
 import java.util.*;
