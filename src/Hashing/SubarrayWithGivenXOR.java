@@ -1,4 +1,14 @@
 package Hashing;
+/*
+    Program to count the number of sub array with given XOR
+    XOR operation
+     0000  1111  1100
+    ^0000 ^1111 ^1010
+     ----  ----  ----
+     0000  0000  0110
+
+     XOR operation give 0 for same bit and 1 for opposite bit.
+ */
 
 import java.io.*;
 import java.util.HashMap;
