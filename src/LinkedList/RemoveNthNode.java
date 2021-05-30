@@ -1,4 +1,7 @@
 package LinkedList;
+/*
+    Program to Remove nth node from end of a linked list;
+ */
 
 import java.io.*;
 
