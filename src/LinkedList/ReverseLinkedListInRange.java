@@ -1,4 +1,7 @@
 package LinkedList;
+/*
+    Program to reverse linked list node in a given range.
+ */
 
 import java.io.*;
 
