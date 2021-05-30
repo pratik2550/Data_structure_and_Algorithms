@@ -1,8 +1,9 @@
 package LinkedList;
+/*
+    Program to merge two sorted Linked list
+ */
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class MergeTwoSortedLinkedList {
     public static void main(String[] args) throws IOException {
