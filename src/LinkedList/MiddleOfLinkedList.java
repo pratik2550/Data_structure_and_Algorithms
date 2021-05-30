@@ -1,4 +1,8 @@
 package LinkedList;
+/*
+    Program to find middle of a linked-list.
+    if there is two middle then return second middle node.
+ */
 
 import java.io.*;
 
