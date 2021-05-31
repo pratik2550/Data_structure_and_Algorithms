@@ -24,6 +24,7 @@ public class MergeTwoSortedLinkedList {
         }
 
         head1 = mergeLinkedList(head1, head2);
+        head1 = mergeLinkedList2(head1, head2);
         LinkedListNode.printList(head1);
 
     }
@@ -58,5 +59,33 @@ public class MergeTwoSortedLinkedList {
             pre.next = curr2;
         }
         return head1;
+    }
+
+    private static LinkedListNode mergeLinkedList2(LinkedListNode head1, LinkedListNode head2) {
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+        if (head1.data> head2.data) {
+            LinkedListNode temp = head1;
+            head1 = head2;
+            head2 = temp;
+        }
+        LinkedListNode res = head1;
+        while (head1!=null && head2!=null) {
+            LinkedListNode temp = head1;
+            while (head1!= null && head1.data <= head2.data) {
+                temp = head1;
+                head1 = head1.next;
+            }
+            temp.next = head2;
+
+            LinkedListNode tep = head1;
+            head1 = head2;
+            head2 = tep;
+        }
+        return res;
     }
 }
