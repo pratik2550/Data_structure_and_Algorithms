@@ -17,7 +17,8 @@ public class RemoveNthNode {
             tail = tail.next;
         }
 
-        head = removeNthNode(head, n);
+//        head = removeNthNode(head, n);
+        head = removeNthNode2(head, n);
         LinkedListNode.printList(head);
     }
 
@@ -37,6 +38,23 @@ public class RemoveNthNode {
             temp = temp.next;
         }
         temp.next = temp.next.next;
+        return dummy.next;
+    }
+
+    //Using dummy node, at the starting of the head.
+    private static LinkedListNode removeNthNode2(LinkedListNode head, int n) {
+        LinkedListNode dummy = new LinkedListNode(0);
+        dummy.next = head;
+        LinkedListNode fast = head, slow = head;
+
+        for (int i=0; i<=n; i++) {
+            fast = fast.next;
+        }
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        slow.next = slow.next.next;
         return dummy.next;
     }
 }
