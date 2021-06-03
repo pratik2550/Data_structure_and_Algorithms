@@ -60,18 +60,27 @@ public class ReverseInGroupOfSizeK {
         LinkedListNode pre = null;
         while (curr!= null) {
             int count = 0;
+            LinkedListNode tempHead = curr;
             while (count<k && curr!= null) {
                 stack.push(curr);
                 curr = curr.next;
                 count++;
             }
-            while (stack.size()>0) {
-                if (pre == null) {
-                    pre = stack.peek();
-                    head = pre;
+            if (count == k) {
+                while (stack.size() > 0) {
+                    if (pre == null) {
+                        pre = stack.peek();
+                        head = pre;
+                    } else {
+                        pre.next = stack.peek();
+                        pre = pre.next;
+                    }
                     stack.pop();
-                } else {
-                    pre.next = stack.peek();
+                }
+            } else {
+                while (stack.size()>0) {
+                    pre.next = tempHead;
+                    tempHead = tempHead.next;
                     pre = pre.next;
                     stack.pop();
                 }
