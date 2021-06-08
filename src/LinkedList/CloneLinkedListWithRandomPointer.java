@@ -165,7 +165,6 @@ public class CloneLinkedListWithRandomPointer {
             curr.next = head;
             curr = head;
         }
-
-        return head;
+        return head2;
     }
 }
