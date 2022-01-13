@@ -25,6 +25,7 @@ public class MaximumOfAllSubarraysOfSizeK {
         slidingWindowMaximumDeque(arr, n, k);
     }
 
+    //    Using Deque
     private static void slidingWindowMaximumDeque(int[] arr, int n, int k) {
         Deque<Integer> deque = new LinkedList<>();
         int i;
