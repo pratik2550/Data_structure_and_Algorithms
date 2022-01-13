@@ -1,11 +1,9 @@
 package Heap;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.PriorityQueue;
+import java.util.*;
 
-public class KthLargestLamentsInArray {
+public class KthLargestElementsInArray {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        int n = Integer.parseInt(br.readLine());
