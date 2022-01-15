@@ -1,6 +1,7 @@
 package Heap;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class MergeKSortedArrays {
@@ -39,6 +40,7 @@ public class MergeKSortedArrays {
             }
             x++;
         }
+        ArrayList<Integer> N = new ArrayList<>();
         for(int a : ans) {
             System.out.print(a + " ");
         }
