@@ -19,19 +19,18 @@ public class MergeTwoBinaryMaxHeaps {
         for(int j=0; j<m; j++) {
             arr2[j] = Integer.parseInt(br.readLine());
         }
-//    System.out.println("Hello");
         mergeBinaryHeaps(arr1, arr2, n, m);
     }
 
     private static void mergeBinaryHeaps(int[] arr1, int[] arr2, int n, int m) {
         PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
-        List<Integer> ans = new ArrayList<>();
+        int ans[] = new int[n+m];
         queue.add(arr1[0]);
         queue.add(arr2[0]);
-        int i=1, j=1;
+        int i=1, j=1, k=0;
         while(i<n || j<m) {
             if(!queue.isEmpty()) {
-                ans.add(queue.peek());
+                ans[k++]=queue.peek();
                 int top = queue.poll();
                 if (top == arr1[i-1] && i<n) {
                     queue.add(arr1[i++]);
@@ -40,9 +39,14 @@ public class MergeTwoBinaryMaxHeaps {
                 }
             }
         }
-        ans.add(queue.poll());
+        while (!queue.isEmpty()) {
+            ans[k++] = queue.poll();
+        }
         for(int a: ans) {
             System.out.println(a);
         }
     }
 }
+//10 3
+//        12 11 7 7 5 5 3 2 1 1
+//        9 5 1
