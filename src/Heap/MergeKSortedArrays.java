@@ -50,8 +50,13 @@ public class MergeKSortedArrays {
 class Pair{
         int ind;
         int val;
+        char key;
         Pair(int i, int v) {
             ind = i;
+            val = v;
+        }
+        Pair(char key, int v) {
+            key = this.key;
             val = v;
         }
 }
