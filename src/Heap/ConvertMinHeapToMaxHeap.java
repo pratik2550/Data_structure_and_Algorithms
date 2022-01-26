@@ -3,7 +3,6 @@ package Heap;
 public class ConvertMinHeapToMaxHeap {
     public static void main(String[] args) {
         int arr[] = {3, 5, 9, 6, 8, 20, 10, 12, 18, 9};
-//        int arr[] = { 1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17 };
         int n = arr.length;
         convertMinToMax(arr,n);
         printHeap(arr, n);
@@ -20,10 +19,6 @@ public class ConvertMinHeapToMaxHeap {
         for(int i=start; i>=0; i--) {
             heapify(arr, n, i);
         }
-//        int start = n/2-1;
-//        for (int i=start; i>=0; i--) {
-//            heapiyf(arr, n, i);
-//        }
     }
 
     private static void heapify(int[] arr, int n, int i) {
@@ -41,7 +36,6 @@ public class ConvertMinHeapToMaxHeap {
             int temp = arr[largest];
             arr[largest] = arr[i];
             arr[i] = temp;
-//            System.out.println(arr[largest]+" "+largest);
 
             heapify(arr, n, largest);
         }
