@@ -5,7 +5,6 @@ import java.util.PriorityQueue;
 
 public class SortCharactersByFrequency {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         String s = "cccaaa";
         System.out.println(frequencySort(s));
     }
@@ -27,7 +26,6 @@ public class SortCharactersByFrequency {
             }
             heap.remove();
         }
-
         return sb.toString();
     }
 }
