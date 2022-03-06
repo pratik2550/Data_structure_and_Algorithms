@@ -15,12 +15,12 @@ public class HeightOfBinaryTree {
         treeLevel.root.left.right = new TreeNode(5);
 
         System.out.println(treeLevel.heightOfTree1(root));
-        System.out.println(treeLevel.heightOfTree2(root)+1);
+        System.out.println(treeLevel.heightOfTree2(root));
     }
 
     private int heightOfTree2(TreeNode root) {
         if(root==null) {
-            return -1;
+            return 0;
         } else {
             int ldepth = heightOfTree2(root.left);
             int rdepth = heightOfTree2(root.right);
