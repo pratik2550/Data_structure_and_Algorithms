@@ -1,5 +1,7 @@
 package Tree;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class InorderTraversal {
@@ -20,6 +22,7 @@ public class InorderTraversal {
 
     private void inorderTraversalUsingIteration(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
+        List<Integer> ans = new ArrayList<>();
         TreeNode cur = root;
         while (true) {
             if (cur!=null) {
@@ -31,13 +34,11 @@ public class InorderTraversal {
                 }
                 cur = stack.pop();
                 System.out.println(cur.data);
+                ans.add(cur.data);
                 cur = cur.right;
             }
         }
-
-
-
-
+        return;
     }
 
     private void inorderTraversalUsingRecursion(TreeNode root) {
