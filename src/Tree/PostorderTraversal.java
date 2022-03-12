@@ -16,7 +16,7 @@ public class PostorderTraversal {
         treeLevel.root.left.left = new TreeNode(4);
         treeLevel.root.left.right = new TreeNode(5);
 
-//        treeLevel.postorderTraversalUsingRecursion(root);
+        treeLevel.postorderTraversalUsingRecursion(root);
         treeLevel.postorderTraversalUsingIteration(root);
     }
 
