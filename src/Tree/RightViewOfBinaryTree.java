@@ -16,7 +16,7 @@ public class RightViewOfBinaryTree {
         treeLevel.root.left.left = new TreeNode(4);
         treeLevel.root.left.right = new TreeNode(5);
 
-//        treeLevel.rightViewOfBinaryTreeRecursive(root);
+        treeLevel.rightViewOfBinaryTreeRecursive(root);
         treeLevel.rightViewOfBinaryTreeIterative(root);
     }
 
