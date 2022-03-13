@@ -1,6 +1,8 @@
 package Tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class RightViewOfBinaryTree {
 
@@ -14,8 +16,8 @@ public class RightViewOfBinaryTree {
         treeLevel.root.left.left = new TreeNode(4);
         treeLevel.root.left.right = new TreeNode(5);
 
-        treeLevel.rightViewOfBinaryTreeRecursive(root);
-//        treeLevel.rightViewOfBinaryTreeIterative(root);
+//        treeLevel.rightViewOfBinaryTreeRecursive(root);
+        treeLevel.rightViewOfBinaryTreeIterative(root);
     }
 
     private void rightViewOfBinaryTreeRecursive(TreeNode root) {
@@ -37,8 +39,36 @@ public class RightViewOfBinaryTree {
         rightViewRecursiveUtil(root.left, list, level+1);
     }
 
-    private void leftViewOfBinaryTreeIterative(TreeNode root) {
-
+    private void rightViewOfBinaryTreeIterative(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        queue.add(root);
+        queue.add(null);
+        int h=0;
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.poll();
+            if (list.size()==h && temp!=null){
+                list.add(h, temp.data);
+//            }else if (list.size()>=h && temp!=null) {
+//                list.set(h, temp.data);
+            }
+            if (temp==null) {
+                h++;
+            }
+            if (temp!=null) {
+                if (temp.right!=null){
+                    queue.add(temp.right);
+                }
+                if (temp.left!=null){
+                    queue.add(temp.left);
+                }
+            } else if(!queue.isEmpty()){
+                queue.add(null);
+            }
+        }
+        for (int i: list) {
+            System.out.print(i+" ");
+        }
     }
 
 }
